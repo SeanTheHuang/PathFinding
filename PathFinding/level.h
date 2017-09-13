@@ -28,6 +28,8 @@
 // Types
 
 // Constants
+#define GRID_WIDTH 23
+#define GRID_HEIGHT 12
 
 // Prototypes
 class CFPSCounter;
@@ -47,9 +49,9 @@ public:
 	void ProcessUserClick(int, int, NODE_STATE);
 
 protected:
-	void ChangeNodeState(int, NODE_STATE);
+	void ChangeNodeState(int, int, NODE_STATE);
 	void UpdatePath();
-
+	void ClearOldPath();
 
 private:
 	CLevel(const CLevel& _kr);
@@ -60,14 +62,12 @@ public:
 
 protected:
 
-
 private:
-	std::vector<CNode*> m_vecNode;
+	CNode* m_nodeMatrix[GRID_WIDTH][GRID_HEIGHT];
+	std::vector<CNode*> m_vecPathNodes;
+
 	int m_iWidth;
 	int m_iHeight;
-
-	int m_iNodesPerRow;
-	int m_iNodesPerCol;
 
 	int m_iXOffset;
 	int m_iYOffset;

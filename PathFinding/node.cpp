@@ -4,11 +4,19 @@
 #include "utils.h"
 #include "game.h"
 
-CNode::CNode(int iX, int iY)
+CNode::CNode(int iX, int iY, int xCoord, int yCoord)
 {
 	m_iX = iX;
 	m_iY = iY;
-	
+
+	m_iGCost = INT16_MAX;
+	m_iHCost = INT16_MAX;
+
+	m_iXCoord = xCoord;
+	m_iYCoord = yCoord;
+
+	m_previousNodeInPath = NULL;
+
 	UpdateNodeState(EMPTY_STATE);
 }
 
@@ -64,3 +72,22 @@ bool CNode::UpdateNodeState(NODE_STATE newState)
 
 	return true;
 }
+
+int CNode::GCost() { return m_iGCost; }
+int CNode::HCost() { return m_iHCost; }
+int CNode::FCost() { return m_iGCost + m_iHCost; }
+
+void CNode::SetGCost(int newVal) { m_iGCost = newVal; }
+void CNode::SetHCost(int newVal) { m_iHCost = newVal; }
+
+int CNode::XCoord() { return m_iXCoord; }
+int CNode::YCoord() { return m_iYCoord; }
+
+bool CNode::NodeIsWalkable() 
+{ 
+	return (m_currentNodeState != BLOCKED_STATE
+		&& m_currentNodeState != PLAYER_STATE);
+
+}
+
+NODE_STATE CNode::CurrentNodeState() { return m_currentNodeState; }

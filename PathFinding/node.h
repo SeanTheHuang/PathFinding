@@ -15,7 +15,7 @@ enum NODE_STATE
 class CNode : public CSprite
 {
 public:
-	CNode(int, int);
+	CNode(int, int, int, int);
 	CNode() = default;
 	~CNode();
 
@@ -24,9 +24,27 @@ public:
 
 	bool UpdateNodeState(NODE_STATE);
 
+	int GCost();
+	int HCost();
+	int FCost();
 
+	void SetGCost(int);
+	void SetHCost(int);
+
+	int XCoord();
+	int YCoord();
+
+	bool NodeIsWalkable();
+
+	CNode* m_previousNodeInPath;
+	NODE_STATE CurrentNodeState();
 
 private:
 	NODE_STATE m_currentNodeState;
+	int m_iXCoord;
+	int m_iYCoord;
+
+	int m_iGCost;
+	int m_iHCost;
 
 };
