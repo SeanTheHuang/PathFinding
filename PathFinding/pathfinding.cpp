@@ -1,3 +1,17 @@
+//
+// Bachelor of Software Engineering
+// Media Design School
+// Auckland
+// New Zealand
+//
+// (c) 2017 Media Design School
+//
+// File Name	: pathfinding.cpp
+// Description	: implementation of pathfinding class. All functions are static
+// Author		: Sean Huang
+// Mail			: sean.hua7281@mediadesign.school.nz
+//
+
 #include "pathfinding.h"
 
 #include "AStarQueue.h"
@@ -26,9 +40,9 @@ bool CPathFinding::AStar(CNode* nodeMatrix[GRID_WIDTH][GRID_HEIGHT], std::stack<
 		if (currentNode == endNode)	//Found target! start tracing back
 		{
 			currentNode = currentNode->m_previousNodeInPath;
-			while (currentNode != startNode) //Create path back to start node
+			while (currentNode != startNode)	//Back tracking starts here
 			{
-				outputStack.push(currentNode);
+				outputStack.push(currentNode);	//Record path back to start
 				currentNode = currentNode->m_previousNodeInPath;
 			}
 
@@ -68,6 +82,7 @@ bool CPathFinding::AStar(CNode* nodeMatrix[GRID_WIDTH][GRID_HEIGHT], std::stack<
 
 void CPathFinding::ResetAStarValues(CNode* nodes[GRID_WIDTH][GRID_HEIGHT], CNode* targetNode)
 {
+	//Reset pathfinding variables to default state
 	for (size_t i = 0; i < GRID_WIDTH; i++)
 	{
 		for (size_t j = 0; j < GRID_HEIGHT; j++)
@@ -165,6 +180,10 @@ void CPathFinding::GetSurroundingNodes(std::vector<CNode*>& output,
 
 int CPathFinding::GetDistanceBetweenNodes(CNode* nodeA, CNode* nodeB)
 {
+	//Difference between x & y difference = number of perpendicular moves.
+	//Max(x difference, y difference) - difference between x & y difference
+	// gives number of diagonal moves.
+
 	int xDiff = (int)abs(nodeA->XCoord() - nodeB->XCoord());
 	int yDiff = (int)abs(nodeA->YCoord() - nodeB->YCoord());
 

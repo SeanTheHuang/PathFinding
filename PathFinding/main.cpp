@@ -6,8 +6,8 @@
 //
 // (c) 2017 Media Design School
 //
-// File Name	: 
-// Description	: 
+// File Name	: main.cpp
+// Description	: entry point to the program. Creates the window for the program.
 // Author		: Sean Huang
 // Mail			: sean.hua7281@mediadesign.school.nz
 //

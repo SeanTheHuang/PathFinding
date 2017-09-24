@@ -1,3 +1,17 @@
+//
+// Bachelor of Software Engineering
+// Media Design School
+// Auckland
+// New Zealand
+//
+// (c) 2017 Media Design School
+//
+// File Name	: node.cpp
+// Description	: implementation of node class.
+// Author		: Sean Huang
+// Mail			: sean.hua7281@mediadesign.school.nz
+//
+
 #include "node.h"
 
 #include "resource.h"
@@ -39,6 +53,7 @@ bool CNode::UpdateNodeState(NODE_STATE newState)
 {
 	m_currentNodeState = newState;
 
+	//Change look of the sprite
 	switch (newState)
 	{
 	case (EMPTY_STATE):
@@ -85,6 +100,7 @@ int CNode::YCoord() { return m_iYCoord; }
 
 bool CNode::NodeIsWalkable() 
 { 
+	//Check if node can be placed in open set in A* algorithm
 	return (m_currentNodeState != BLOCKED_STATE
 		&& m_currentNodeState != PLAYER_STATE);
 

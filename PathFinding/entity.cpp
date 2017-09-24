@@ -6,8 +6,8 @@
 //
 // (c) 2017 Media Design School
 //
-// File Name	: 
-// Description	: 
+// File Name	: entity.cpp
+// Description	: implementation of entity class
 // Author		: Sean Huang
 // Mail			: sean.hua7281@mediadesign.school.nz
 //

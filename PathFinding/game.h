@@ -6,8 +6,8 @@
 //
 // (c) 2017 Media Design School
 //
-// File Name	: 
-// Description	: 
+// File Name	: game.h
+// Description	: game class contains backend functionality of the program (frame counter, backbuffer). The class is a singleton
 // Author		: Sean Huang
 // Mail			: sean.hua7281@mediadesign.school.nz
 //

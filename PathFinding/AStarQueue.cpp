@@ -1,3 +1,17 @@
+//
+// Bachelor of Software Engineering
+// Media Design School
+// Auckland
+// New Zealand
+//
+// (c) 2017 Media Design School
+//
+// File Name	: AStarQueue.cpp
+// Description	: implementation of AStarQueue class
+// Author		: Sean Huang
+// Mail			: sean.hua7281@mediadesign.school.nz
+//
+
 #include "AStarQueue.h"
 
 #include <algorithm>
@@ -30,6 +44,7 @@ void AStarQueue::Insert(CNode* newNode)
 
 CNode* AStarQueue::Pop()
 {
+	//Get and remove first element
 	if (m_container.empty())
 	{
 		return NULL;
@@ -43,6 +58,8 @@ CNode* AStarQueue::Pop()
 
 bool AStarQueue::GreaterPriority(CNode* newNode, CNode* targetNode)
 {
+	//Return true if new mode has higher priority than target node
+
 	if (newNode->FCost() < targetNode->FCost())
 	{
 		return true;

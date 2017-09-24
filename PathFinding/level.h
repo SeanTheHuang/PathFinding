@@ -6,8 +6,8 @@
 //
 // (c) 2017 Media Design School
 //
-// File Name	: 
-// Description	: 
+// File Name	: level.h
+// Description	: defintion of level class. This class joins the different components of the program together
 // Author		: Sean Huang
 // Mail			: sean.hua7281@mediadesign.school.nz
 //

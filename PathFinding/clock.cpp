@@ -6,8 +6,8 @@
 //
 // (c) 2017 Media Design School
 //
-// File Name	: 
-// Description	: 
+// File Name	: clock.cpp
+// Description	: implementation of clock class
 // Author		: Sean Huang
 // Mail			: sean.hua7281@mediadesign.school.nz
 //

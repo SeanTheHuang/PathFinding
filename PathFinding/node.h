@@ -1,3 +1,16 @@
+//
+// Bachelor of Software Engineering
+// Media Design School
+// Auckland
+// New Zealand
+//
+// (c) 2017 Media Design School
+//
+// File Name	: node.h
+// Description	: Defintion of a node. Node controls drawing itself and holds variables for A* pathfinding
+// Author		: Sean Huang
+// Mail			: sean.hua7281@mediadesign.school.nz
+//
 #pragma once
 
 #include "sprite.h"
